@@ -1,6 +1,6 @@
-#Git Cheat Sheet
+# Git Cheat Sheet
 
-##Commands
+## Commands
 * git init - create a new repo
 * git clone - clone a repo
 
@@ -11,11 +11,10 @@
     * -w ignores whitespace changes
     * -p SHA(first7) - Use the SHA of a commit as the final argument of all these commands to start at that commit git log
 
-*git show - shows only one commit
+* git show - shows only one commit:
     * --stat
     * -p or --patch
     * -w 
-
 * git status
 * git add - command is used to move files from the Working Directory to the Staging Index.
 * got add . - will add all files in the current directory
@@ -30,22 +29,22 @@
     * moves committed changes to the staging index with the --soft flag
     * unstages committed changes --mixed flag
     * Ancestry references are typically used to indicate previous commits. The ancestry references are:
-        * /^ – indicates the parent commit
-        * /~ – indicates the first parent commit
-        * /^ – indicates the parent commit
+        * ^ – indicates the parent commit
+        * ~ – indicates the first parent commit
+        * ^ – indicates the parent commit
 * .gitignore - keeps a file from being committed
 * git diff - displays difference between 2 versions of a file
 * .gitignore - keep a file in your project directory structure but prevents it from being accidentally committed to the project
 * git tag to add a tag; -a nameit SHA7 
 * git branch "name" - will create a branch with that name
 * git checkout - to check out that branch
-* # to list all branches
+* /# to list all branches
 * git branch
 * git branch "name" to create a branch w/ that name
 * git branch -d "name" to delete that branch
-* # to create a new "footer-fix" branch
+* /# to create a new "footer-fix" branch
     * git branch footer-fix
-* # to delete the "footer-fix" branch
+* /# to delete the "footer-fix" branch
     * git branch -d footer-fix
 * git checkout -b "name" master - creates a branch at the same location as master and checks it out
 * git log --oneline --decorate --graph --all  - Running this command will show all branches and commits in the repository:
@@ -78,7 +77,7 @@
 * git rebase -i HEAD ~3 will squash the commits to the pevious 3 from the HEAD. Use the number of commits you want to combine
 
 **************************************************************************************************************
-##Navigating The Git Log
+## Navigating The Git Log
 
 To move through the log:
 > to scroll down, press
@@ -92,7 +91,7 @@ To move through the log:
 > press q to quit out of the log 
 
 **************************************************************************************************************
-##Commits
+## Commits
 The goal is that each commit has a single focus. Each commit should record a single-unit change. 
 
 Globbing lets you use special characters to match patterns/characters. In the .gitignore file, you can use the following:
@@ -107,7 +106,7 @@ Globbing lets you use special characters to match patterns/characters. In the .g
     * a/b/c/z
 
 **************************************************************************************************************
-##Merging Branches
+## Merging Branches
 In a merge, you're merging some other branch into the current (checked-out) branch. We're not merging two branches into a new branch. We're not merging the current branch into the other branch.
 
 Another type of merge where two divergent branches are combined. 
@@ -125,10 +124,10 @@ Resolve the conflict:
 
 
 **************************************************************************************************************
-##Remote Repositories
+## Remote Repositories
 
 The git push command is used to send commits from a local repository to a remote repository.
-> $git push origin master
+    * /$git push origin master
 
 The git push command takes:
     * the shortname of the remote repository you want to send commits to
@@ -147,7 +146,7 @@ The git fetch command is just the first step. It just retrieves the commits and 
     * the branch with commits to retrieve
     * /$ git fetch origin master
 
-##Forking Repositories
+## Forking Repositories
 Forking creates an identical repository
 To get commits from a source repository into your forked repository on GitHub you need to:
     * get the cloneable URL of the source repository
@@ -167,12 +166,12 @@ A pull request is a request for the source repository to pull in your commits an
     * create a new pull request and choose the branch that has your new commits
 
 **************************************************************************************************************
-##Rebase Command
-The git rebase command will move commits to have a new base. In the command git rebase -i HEAD~3, we're telling Git to use HEAD~3 as the base where all of the other commits (HEAD~2, HEAD~1, and HEAD) will connect to.
+## Rebase Command
+The git rebase command will move commits to have a new base. In the command git rebase -i HEAD/~3, we're telling Git to use HEAD/~3 as the base where all of the other commits (HEAD/~2, HEAD/~1, and HEAD) will connect to.
 
 The -i in the command stands for "interactive". You can perform a rebase in a non-interactive mode. While you're learning how to rebase, though, I definitely recommend that you do interactive rebasing
 
-Rebase Commands
+### Rebase Commands
 The different commands that you can do with git rebase:
     * use p or pick – to keep the commit as is
     * use r or reword – to keep the commit's content but alter the commit message
@@ -186,9 +185,9 @@ The different commands that you can do with git rebase:
     * use d or drop – to delete the commit
 
 When to rebase
-    * /# interactive rebase
-        * /$ git rebase -i <base>
+    * /#/ interactive rebase
+        * git rebase -i <base>
     * /# interactively rebase the commits to the one that's 3 before the one we're on
-        * /$ git rebase -i HEAD~3
+        * git rebase -i HEAD~3
 
 Its recommended to create a backup branch before rebasing, so that it's easy to return to your previous state. If you're happy with the rebase, then you can just delete the backup branch!
