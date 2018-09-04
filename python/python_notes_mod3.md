@@ -94,10 +94,10 @@ filename.split - breaks up a sting based on the character you select
 when you import a module, python runs all the code in that module
 	if you want there to be a difference between importing a file and running it
 	use the if statement 
-'''python
+```
 if __name == '__main__':
 robot_move()
-'''
+```
 
 **"dunder variables"** for double underscore
 dunder name variable contains name for the current module
@@ -137,9 +137,9 @@ Goal is to create the most efficient process to address the problem
 ## Opening and Reading a File
 
 Telling python to open a file and python gives a file object
-'''python
+```
 	my_story = open("my_story.txt")
-	'''
+```
 tells the system you want to work with this file and puts a file object into the variable my_story
 will only work if this file exists and is in the current working directory. if its somewhere else, you'll need to use the longer file/path name
 
@@ -163,15 +163,15 @@ Open file object - lets us use the data in the file
 
 Tells your operating system you're done with the file and it can be closed
 Once its closed you can no longer read from that file
-'''python
+```
 	my_story.close()
 		file.close()
-'''
+```
 
 with open("filename") as filename:
-'''python
+```
 	print(filename.read())
-	'''
+```
 
 inside this compound statement, filename can be used as a variable
 when the with block ends, the file will automatically be closed (even if kept in a list)
@@ -202,9 +202,9 @@ The method lower() returns a copy of the string in which all case-based characte
 
 Syntax
 Following is the syntax for lower() method −
-'''python
+```
 str.lower()
-'''
+```
 
 ## Writing Output to a File
 
@@ -221,14 +221,14 @@ str.lower()
 			* takes an argument, which is the string you want to write to the file
 			* repeatedly write to a file by calling the write method several times
 				* can write in a loop
-				'''python
-					f = open("output.txt", "w")
-					for num in range(100):
-					    f.write(str(num))
-					    f.write("\n")
+```
+	f = open("output.txt", "w")
+	for num in range(100):
+	    f.write(str(num))
+	    f.write("\n")
 
-					f.close()
-					'''
+	f.close()
+```
 			* the only things that you can write to a file is strings
 				* if you have numbers or another value, you have to convert to a string with the string function or format it into a string using the f function
 
@@ -240,13 +240,13 @@ str.lower()
 Readfile vs writefile
 'read-only mode allows you to read, not write to the file'
 
-	'''python
+```
 	readfile = open("filename.txt") 
 	
 	writefile = open("newfile.txt", "w") 
 
 	writefile.write("writing on my file, writing on my file\n")
-	'''
+```
 
 ## Class Definitions
 
@@ -282,7 +282,7 @@ Define with the "Class statement" - a compound statment
 				ex: def speak(self):
 					print("woof")
 
-'''python
+```
 class Dog:
 	scientific_name = "Canis lupus familiaris"
 
@@ -312,7 +312,6 @@ class Dog:
 			self.speak()
 
 class Cat:
-	
 	def speak(self):
 		print(random.chocie(["Meow Meow!", "Purr!"]))
 
@@ -322,12 +321,13 @@ class Pitbull(Dog):
 	def speak(self):
 		print("WOOF!")
 
+***************************
 bella = animals.Dog()
 bella.learn_name("Bella")
 bella.name
 bella.count()
 
-'''
+```
 
 ## Class Level Variables
 
@@ -361,10 +361,10 @@ Create things when you construct a new object and pass it in a call thats constr
 	* can be defined on any class and will be called whenever a new object of that class is constructed
 	* this requires you to pass in a variable when creating the object instead of it being emppty
 
-'''python
+```
 	def __init__(self, name):
 		self.name = name
-'''
+```
 
 ## Storing Information on instances
 
@@ -399,7 +399,7 @@ Create placeholder methods that dont do anything but can be replaced in a subcla
 
 **pass** - can be used in class or method definitions to indicate that it's intentional for the definitions to do nothing. In python, you cant have a function or class that contains no statements.
 
-'''python
+```
 	class Dog:
 		def do_trick(self)
 			pass
@@ -408,7 +408,7 @@ Create placeholder methods that dont do anything but can be replaced in a subcla
 	class TrainedPitbull(Pitbull):
 		def do_trick(self):
 			print("The pitbull spins in the air and turns briefly into a chicken")
-'''
+```
 
 ## Is-A vs Has-A relationship
 
@@ -428,23 +428,25 @@ class DogPark:
 The dog park class would set up an instance variable setting up a list of dogs that are in a particular dog park
 	Can have methods that are specific to the park
 
+```
 def rollcall(self):
 	print ("Dogs in Park:")
 	for dog in self.dogs:
 		print(f"{dog.name}")
 	print()
-
+```
 
 ## Super
 
+```
 import turtle
 
 class BigOrangeTurtle(turtle.Turtle)
 	def __init__(self):
 		self.color("orange")
 		self.width(10)
-
-subclass replaced the dunder init method
+```
+subclass replaced the dunder init method and removed all the setup that was done under the parent class.
 
 in the dunder init - need to call the dunder init method for the parent class
 	**super().__init__()**
@@ -457,10 +459,10 @@ by using super like this, you're saying you dont want to completely replace the 
 when you're making a subclass of a class that does a complicated setup, you'll want to use this and call them as part of the child class
 
 Ex:
-'''python
+```
 class BigBlueTurtle(turtle.Turtle):
    def __init__(self):
      super().__init__()
      self.color("blue")
      self.width(10)
-'''
+```
