@@ -298,7 +298,7 @@ function helloCat(callbackFunc) {
   return "Hello " + callbackFunc(3);
 }
 
-// pass in catSays as a callback function
+// pass in catSays as a callback 	
 helloCat(catSays);
 ```
 
