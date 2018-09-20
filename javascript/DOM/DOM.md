@@ -195,7 +195,6 @@ header {
 }
 ```
 
-Each one of these sets the color to read, but the difference is the selector - selecting by ID, class and tag.
 
 #### querySelector Method
 
