@@ -1,9 +1,9 @@
 ## Remove Page Content
 
 
-* .removeChild() - removes a child element; requires:
-	* a parent element
-	* the child element that will be removed
+.removeChild() - removes a child element; requires:
+* a parent element
+* the child element that will be removed
 ```
 <parent-element>.removeChild(<child-to-remove>);
 ```
@@ -24,7 +24,8 @@ Example:
 ```
 const mainHeading = document.querySelector('h1');
 ```
-Selects the first <h1> on the page and stores it in the mainHeading variable.
+
+Selects the first h1 on the page and stores it in the mainHeading variable.
 
 ```
 mainHeading.parentElement.removeChild(mainHeading);
@@ -35,9 +36,7 @@ Starts with the mainHeading variable, calls .parentElement, so the focus of the 
 
 
 * .remove()
-https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove
 There is an easier and faster way to remove a child element. This method can be called directly on the element to delete.
-
 ```
 const mainHeading = document.querySelector('h1');
 
@@ -53,7 +52,7 @@ The difference between .firstChild and .firstElementChild, is that .firstElement
 
 ### Style Page Content
 
-* .style.<prop>
+* .style.<property>
 * .cssText()
 * .setAttribute()
 * .className
@@ -63,9 +62,9 @@ The difference between .firstChild and .firstElementChild, is that .firstElement
 
 The means by which browswers decide which CSS property values are the most relevant to an element and, therefore, will be applied. 
 
-Least specific: rules in a stylesheet
-More specific:  rules in a <style>tag
-Most specific: rules in a tag's style attribute
+* Least specific: rules in a stylesheet/n
+* More specific:  rules in a <style> tag /n
+* Most specific: rules in a tag's <style> attribute
 
 Basically, the closer the style rule is to an element, the more specific it is. For example, a rule in a style attribute on an element will override a style rule for that element in a CSS stylesheet. There is also the specificity of the type of selector being used. An _ID_ is more specific than a class.
 
