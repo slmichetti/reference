@@ -62,15 +62,14 @@ The difference between .firstChild and .firstElementChild, is that .firstElement
 
 The means by which browswers decide which CSS property values are the most relevant to an element and, therefore, will be applied. 
 
-* Least specific: rules in a stylesheet/n
-* More specific:  rules in a <style> tag /n
+* Least specific: rules in a stylesheet
+* More specific:  rules in a <style> tag
 * Most specific: rules in a tag's <style> attribute
 
-Basically, the closer the style rule is to an element, the more specific it is. For example, a rule in a style attribute on an element will override a style rule for that element in a CSS stylesheet. There is also the specificity of the type of selector being used. An _ID_ is more specific than a class.
+The closer the style rule is to an element, the more specific it is. 
+	i.e. a rule in a style attribute on an element will override a style rule for that element in a CSS stylesheet. There is also the specificity of the type of selector being used. An _ID_ is more specific than a class.
 
 ### Modifying an Element's Style Attribute
-
-https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
 
 The most specific rules that you can write for an element are written in that element's style attribute. Acces an element's style attribute using the .style property. Using the .style property, you can only modify one CSS style at a time. 
 ```
@@ -83,7 +82,7 @@ mainHeading.style.color = 'red';
 
  the .style.<property> syntax will let us change just one piece of styling for an element. So the .style.property syntax is perfect for setting one style at a time, but it's not great for controlling multiple styles.
 
- we can use the .style.cssText property to set multiple CSS styles at once!
+ Use the .style.cssText property to set multiple CSS styles at once!
  ```
  const mainHeading = document.querySelector('h1');
 
